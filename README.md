@@ -1,79 +1,116 @@
-# Application de covoiturage – Projet Academique
+> **Présentation : Ariane Emmanuelle MOGUO**
 
-## Présentation
+# Application de covoiturage – Projet EFREI
 
-Cette application web de covoiturage a été développée dans le cadre d’un projet académique à l’EFREI. Elle vise à mettre en relation des conducteurs et des passagers pour organiser des trajets partagés.
+## 📌 Description
+Ce projet est une application web de covoiturage développée dans un cadre académique à l’EFREI.
+Elle permet la mise en relation de conducteurs et de passagers afin de partager des trajets.
+L’application repose sur une architecture client–serveur avec un frontend en Vue.js
+et un backend en Node.js (Express), connecté à une base de données MySQL.
 
-Le projet suit une architecture client–serveur : l’interface est réalisée avec Vue.js, le serveur avec Node.js et Express, et les données sont stockées dans MySQL.
+---
 
-## Objectifs
+## 🎯 Objectifs du projet
+- Concevoir une application web complète de covoiturage
+- Mettre en œuvre une architecture frontend / backend moderne
+- Gérer les utilisateurs, trajets et réservations
+- Manipuler une base de données relationnelle (MySQL)
+- Appliquer les bonnes pratiques de structuration d’un projet web
 
-- Développer une application web de covoiturage complète
-- Mettre en place une architecture séparant le frontend et le backend
-- Gérer les utilisateurs, les trajets et les réservations
-- Utiliser une base de données relationnelle MySQL
-- Structurer le code selon les bonnes pratiques du développement web
+---
 
-## Technologies utilisées
+## 🛠️ Technologies utilisées
 
-| Partie | Technologies |
-|---|---|
-| Frontend | Vue.js, Vite, JavaScript, HTML, CSS, Bootstrap |
-| Backend | Node.js, Express.js |
-| Base de données | MySQL |
-| Outils | Git, GitHub, npm |
-
-## Organisation du projet
-
-```text
-client/
-└── vite-project/   Application frontend Vue.js
-
-server/             Serveur backend Express.js
-users.sql           Script SQL de la base de données
-README.md           Documentation du projet
-```
-
-## Base de données
-
-La base de données contient les informations relatives aux utilisateurs, notamment les conducteurs et les passagers, ainsi que les données nécessaires à l’authentification, aux trajets et aux réservations.
-
-Pour l’installer, créez une base de données MySQL, puis importez le fichier `users.sql` à l’aide de phpMyAdmin ou de la ligne de commande.
-
-## Installation et lancement en local
+### Frontend
+- Vue.js (Vite)
+- JavaScript
+- HTML / CSS
+- Bootstrap
 
 ### Backend
+- Node.js
+- Express.js
 
-Dans un terminal, exécutez :
+### Base de données
+- MySQL
+
+### Outils
+- Git & GitHub (versioning)
+- npm
+
+---
+
+## 📂 Structure du projet
+
+client/
+└── vite-project/ → application frontend Vue.js
+
+server/ → serveur backend Express.js
+
+users.sql → script SQL de la base de données
+
+README.md → documentation du projet
+
+
+---
+
+## 🗄️ Base de données (MySQL)
+La base de données permet de gérer :
+- les utilisateurs (conducteurs et passagers)
+- les informations nécessaires à l’authentification
+- les données liées aux trajets et réservations
+
+### Importation
+1. Créer une base de données MySQL
+2. Importer le fichier `users.sql` (structure uniquement, sans comptes préexistants)
+
+via phpMyAdmin ou en ligne de commande.
+
+---
+
+## ▶️ Installation et exécution en local
+
+### 1️⃣ Backend (Express.js)
 
 ```bash
 cd server
 npm install
 npm start
-```
-
-Le serveur est accessible à l’adresse [http://localhost:3000](http://localhost:3000).
-
-### Frontend
-
-Dans un second terminal, exécutez :
-
+http://localhost:3000
+````
+### 2️⃣ Frontend (Vue.js)
 ```bash
 cd client/vite-project
 npm install
 npm run dev
-```
+http://localhost:5173
+````
 
-L’application est accessible à l’adresse [http://localhost:5173](http://localhost:5173).
+🔐 Sécurité
 
-## Sécurité
+Les informations sensibles (identifiants de base de données, clés, mots de passe)
+ne sont pas exposées publiquement dans le dépôt.
 
-Les informations confidentielles, comme les identifiants de connexion à la base de données, les clés et les mots de passe, ne doivent pas être publiées dans le dépôt. Elles peuvent être placées dans des variables d’environnement, notamment dans un fichier `.env` exclu du suivi Git.
+Les variables sensibles doivent être stockées dans :
 
-## Contexte académique
+des fichiers de configuration
 
-Ce projet s’inscrit dans la formation d’ingénieur à l’EFREI. Il permet de mettre en pratique des compétences en développement web, en architecture client–serveur et en gestion de bases de données.
+ou des variables d’environnement (.env)
 
-## Contact
+👨‍🎓 Contexte académique
+Projet réalisé dans le cadre de la formation d’ingénieur à l’EFREI.
+Ce projet a pour objectif de mettre en pratique les compétences acquises en :
 
-Pour toute question concernant le projet, vous pouvez me joindre via GitHub ou LinkedIn.
+développement web
+
+architecture client–serveur
+
+gestion de bases de données
+
+📧 Contact
+Pour toute question ou remarque concernant ce projet,
+vous pouvez me contacter via GitHub ou LinkedIn.
+
+## Préparation de la configuration
+
+Avant le lancement, créez `server/.env` à partir de `server/.env.example` et renseignez la base MySQL et une valeur longue et aléatoire pour `SESSION_SECRET`. Le serveur lit les variables d’environnement ; si votre terminal ne charge pas `.env` automatiquement, exportez-les avant `npm start`. Les trajets et comptes fournis dans le dépôt original ont été retirés de cette copie pour protéger leurs données.
